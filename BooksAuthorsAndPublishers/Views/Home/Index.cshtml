@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    <!-- created a reference for simplicity -->
+    List<Author> Authors = Model.AllAuthors;
+    List<Book> Books = Model.AllBooks;
+    List<Publisher> Publishers = Model.AllPublishers;
+}
+
+<!-- @@model = binds the model 
+@@Model = refers to the object itself -->
+
+@model IndexView
+<form action="/AddAuthor" method="post">
+    <label asp-for="FormAuthor.Name"></label>
+    <br>
+    <input type="text" asp-for="FormAuthor.Name">
+    <br>
+    <span asp-validation-for="FormAuthor.Name"></span>
+    <br>
+    <input type="submit" value="Add Author">
+</form>
+<h1>All Authors</h1>
+<ul>
+    @foreach(Author a in Authors)
+    {
+        <li>@a.Name
+            <ul>
+            @foreach(Book b in a.Books)
+            {
+                <li>@b.Title</li>
+            }
+            </ul>
+        </li>
+    }
+</ul>
+<h1>Add Book</h1>
+<form action="/AddBook" method="post">
+    <label asp-for="FormBook.Title">Title</label>
+    <input type="text" asp-for="FormBook.Title">
+    <br>
+    <span asp-validation-for="FormBook.Title"></span>
+    <br>
+    <label asp-for="FormBook.AuthorId">Author</label>
+    <select asp-for="FormBook.AuthorId">
+            @foreach(Author a in Authors)
+            {
+                <option value="@a.AuthorId">@a.Name</option>
+            }
+    </select>
+    <br>
+    <span asp-validation-for="FormAuthor.AuthorId"></span>
+    <br>
+    <input type="submit" value="Add Book">
+</form>
+<h1>All Books</h1>
+<ul>
+    @foreach(Book b in Books)
+    {
+        <li>@b.Title written by @b.Author.Name</li>
+    }
+</ul>
+<br>
+<h1>Add Publisher</h1>
+<form action="/AddPublisher" method="post">
+    <label asp-for="FormPublisher.Name"></label>
+    <br>
+    <input type="text" asp-for="FormPublisher.Name">
+    <br>
+    <span asp-validation-for="FormPublisher.Name"></span>
+    <br>
+    <input type="submit" value="Add Publisher">
+</form>
+<h1>All Publishers</h1>
+<ul>
+    @foreach(Publisher p in Publishers)
+    {
+        <li>@p.Name</li>
+        <ul>
+            @foreach(Publication b in p.HasBooks)
+            {
+            <li>@b.Book.Title</li>
+            }
+        </ul>
+    }
+</ul>
+<h1>Add Publication</h1>
+<form action="/AddPublication" method="post">
+    <label asp-for="FormPublication.BookId">Book</label>
+    <select asp-for="FormPublication.BookId">
+            @foreach(Book b in Books)
+            {
+                <option value="@b.BookId">@b.Title</option>
+            }
+    </select>
+    <br>
+    <label asp-for="FormPublication.BookId">Publisher</label>
+    <select asp-for="FormPublication.PublisherId">
+            @foreach(Publisher p in Publishers)
+            {
+                <option value="@p.PublisherId">@p.Name</option>
+            }
+    </select>
+    <br>
+    <input type="submit" value="Add Publication">
+</form>
+<h1>All Publications</h1>
