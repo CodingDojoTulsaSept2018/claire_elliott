@@ -1,4 +1,6 @@
-RapperAPI-master/bin/
-RapperAPI-master/obj/
-RapperAPI-master/.vscode/
-BooksAuthorsAndPublishers/appsettings.json
+csharp/RapperAPI-master/bin/
+csharp/RapperAPI-master/obj/
+csharp/RapperAPI-master/.vscode/
+csharp/BooksAuthorsAndPublishers/appsettings.json
+python/shark-review/requirements.txt
+python/shark-review/.vscode/

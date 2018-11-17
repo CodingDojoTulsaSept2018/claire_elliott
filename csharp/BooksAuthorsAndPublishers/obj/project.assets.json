@@ -11581,11 +11581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\yueka\\Documents\\coding-dojo\\csharp\\orms\\booksandauthors\\BooksAndAuthors.csproj",
+      "projectUniqueName": "c:\\Users\\yueka\\Documents\\coding-dojo\\demos\\sept2018\\csharp\\BooksAuthorsAndPublishers\\BooksAndAuthors.csproj",
       "projectName": "BooksAndAuthors",
-      "projectPath": "c:\\Users\\yueka\\Documents\\coding-dojo\\csharp\\orms\\booksandauthors\\BooksAndAuthors.csproj",
+      "projectPath": "c:\\Users\\yueka\\Documents\\coding-dojo\\demos\\sept2018\\csharp\\BooksAuthorsAndPublishers\\BooksAndAuthors.csproj",
       "packagesPath": "C:\\Users\\yueka\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\yueka\\Documents\\coding-dojo\\csharp\\orms\\booksandauthors\\obj\\",
+      "outputPath": "c:\\Users\\yueka\\Documents\\coding-dojo\\demos\\sept2018\\csharp\\BooksAuthorsAndPublishers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

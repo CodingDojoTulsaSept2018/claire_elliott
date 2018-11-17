@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shark Review</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <!-- NAVBAR HEADER -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-text navbar-brand">Shark Reviews</span>
+            <span class="navbar-text"> Welcome back, {{request.session.welcome}}
+                <a href="/logout" class="badge badge-info ml-4">Log out</a>
+            </span>
+        </div>
+    </nav><!-- /NAVBAR HEADER -->
+    <!-- CREATE A SHARK -->
+    <div class="jumbotron jumbotron-fluid py-3">
+        <div class="container">
+            <h1 class="display-4">Add a Shark</h1>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/sharks/create" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Shark Name</label>
+                    <input type="text" class="form-control w-50" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="url">Image Link</label>
+                    <input type="text" class="form-control w-50" name="url">
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </form>
+        </div>
+    </div><!-- /CREATE A SHARK -->
+    <div class="container">
+        <h3>All Sharks</h3>
+        <div class="row mt-3">
+            <!-- SHOW ALL SHARKS -->
+            {% for shark in allSharks %}
+                <div class="col-lg-4 col-6">
+                    <div class="card border-dark mb-3">
+                        <div class="card-header text-center">{{shark.name}}</div>
+                        <div class="card-body text-dark">
+                            <img src={{shark.url}} class="img-fluid rounded">
+                            <div class="text-center mt-3">
+                                <a href="/sharks/{{shark.id}}" class="btn btn-primary btn-sm">Read Reviews</a>
+                                <!-- checks to see if the logged in user is the creator of the current shark and adds additional features -->
+                                {% if shark.creator.email == request.session.email %}
+                                    <a href="/sharks/{{shark.id}}/delete" class="btn btn-danger btn-sm">Delete</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}<!-- /SHOW ALL SHARKS -->
+        </div>
+    </div>
+</body>
+
+</html>
