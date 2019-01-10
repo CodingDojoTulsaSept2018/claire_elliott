@@ -1,0 +1,11 @@
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\bin\Debug\netcoreapp2.1\IronNinjaDemo.deps.json
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\bin\Debug\netcoreapp2.1\IronNinjaDemo.runtimeconfig.json
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\bin\Debug\netcoreapp2.1\IronNinjaDemo.runtimeconfig.dev.json
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\bin\Debug\netcoreapp2.1\IronNinjaDemo.dll
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\bin\Debug\netcoreapp2.1\IronNinjaDemo.pdb
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\obj\Debug\netcoreapp2.1\IronNinjaDemo.csprojAssemblyReference.cache
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\obj\Debug\netcoreapp2.1\IronNinjaDemo.csproj.CoreCompileInputs.cache
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\obj\Debug\netcoreapp2.1\IronNinjaDemo.AssemblyInfoInputs.cache
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\obj\Debug\netcoreapp2.1\IronNinjaDemo.AssemblyInfo.cs
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\obj\Debug\netcoreapp2.1\IronNinjaDemo.dll
+c:\Users\yueka\Documents\csharp\oop\IronNinjaDemo\obj\Debug\netcoreapp2.1\IronNinjaDemo.pdb
